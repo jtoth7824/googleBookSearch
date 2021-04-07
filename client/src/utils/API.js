@@ -1,11 +1,12 @@
 import axios from "axios";
 
-const apiKey = "AIzaSyBE8rew2L7hzqHNcbX1zl03rA4mdytQuu8"
+const apiKey = "AIzaSyBE8rew2L7hzqHNcbX1zl03rA4mdytQuu8";
+const searchTerm = "Handmaid's Tale";
 
 export default {
   //google api
   getGoogleBooks: function() {
-      return axios.get("https://www.googleapis.com/books/v1/volumes?q=search-terms&key=" + apiKey);
+      return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + searchTerm + "&key=" + apiKey);
   },
 
   // Gets all books

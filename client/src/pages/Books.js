@@ -11,10 +11,17 @@ function Books() {
   // Setting our component's initial state
   const [books, setBooks] = useState([])
   const [formObject, setFormObject] = useState({})
+  const [googleBook, setGoogle] = useState([]);
 
   // Load all books and store them with setBooks
   useEffect(() => {
-    loadBooks()
+    loadBooks();
+    API.getGoogleBooks()
+      .then(res =>{
+        console.log(res.data)
+        setGoogle(res.data)
+      })
+        .catch(err => console.log(err));
   }, [])
 
   // Loads all books and sets them to books
@@ -43,14 +50,38 @@ function Books() {
   // Then reload books from the database
   function handleFormSubmit(event) {
     event.preventDefault();
+    console.log(googleBook.items[0].volumeInfo.title);
+    console.log(googleBook.items[0].volumeInfo.description);
+    console.log(googleBook.items[0].volumeInfo.imageLinks.smallThumbnail);
+    console.log(googleBook.items[0].volumeInfo.previewLink);
+    console.log(googleBook.items[0].volumeInfo.authors);
+
     if (formObject.title && formObject.author) {
       API.saveBook({
         title: formObject.title,
         author: formObject.author,
         synopsis: formObject.synopsis
       })
-        .then(res => loadBooks())
+        .then(res => {
+          var newAuthor;
+          var num = ["bob", "bill", "mary"];
+
+          if(googleBook.items[0].volumeInfo.authors.length > 1) {
+//            var newAuthor = googleBook.items[0].volumeInfo.authors.split(" ");
+            newAuthor = googleBook.items[0].volumeInfo.authors.join(", ");
+            };
+          console.log(newAuthor);
+          API.saveBook({
+            title: googleBook.items[0].volumeInfo.title,
+            image: googleBook.items[0].volumeInfo.imageLinks.smallThumbnail,
+            previewLink: googleBook.items[0].volumeInfo.previewLink,
+            synopsis: googleBook.items[0].volumeInfo.description,
+            author: newAuthor
+          })
+          loadBooks()
+        })
         .catch(err => console.log(err));
+
     }
   };
 
