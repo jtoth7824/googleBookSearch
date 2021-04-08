@@ -1,13 +1,18 @@
 import axios from "axios";
 
-const apiKey = "AIzaSyBE8rew2L7hzqHNcbX1zl03rA4mdytQuu8";
-const searchTerm = "Handmaid's Tale";
-
+//const apiKey = "AIzaSyBE8rew2L7hzqHNcbX1zl03rA4mdytQuu8";
+const searchTerm = "DaVinci Code";
+//https://www.googleapis.com/books/v1/volumes?q=
 export default {
   //google api
   getGoogleBooks: function() {
-      return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + searchTerm + "&key=" + apiKey);
+      return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + searchTerm);
   },
+
+  // getEnvVars: function(temp) {
+  //   console.log("step 2");
+  //   return axios.get("/api/books/" + temp);
+  // },
 
   // Gets all books
   getBooks: function() {

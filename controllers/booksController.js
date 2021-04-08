@@ -3,6 +3,7 @@ const db = require("../models");
 // Defining methods for the booksController
 module.exports = {
   findAll: function(req, res) {
+    console.log("john");
     db.Book
       .find(req.query)
       .sort({ date: -1 })
@@ -33,5 +34,12 @@ module.exports = {
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-  }
+  },
+
+  // getAPI: function(req, res) {
+  //   console.log("in controller");
+  //  var apiKey = process.env.REAC_APP_API_KEY
+  //  console.log("apikey = " + apiKey);
+  //   return res.json(apiKey =process.env.REAC_APP_API_KEY);
+  // }
 };

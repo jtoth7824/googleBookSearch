@@ -16,6 +16,14 @@ function Books() {
   // Load all books and store them with setBooks
   useEffect(() => {
     loadBooks();
+
+    // API.getEnvVars()
+    //   .then(res=> {
+    //     console.log("inenvVars");
+    //     console.log(res.apiKey);
+    //   })
+    //   .catch(err => console.log(err));
+
     API.getGoogleBooks()
       .then(res =>{
         console.log(res.data)
@@ -50,11 +58,11 @@ function Books() {
   // Then reload books from the database
   function handleFormSubmit(event) {
     event.preventDefault();
-    console.log(googleBook.items[0].volumeInfo.title);
-    console.log(googleBook.items[0].volumeInfo.description);
-    console.log(googleBook.items[0].volumeInfo.imageLinks.smallThumbnail);
-    console.log(googleBook.items[0].volumeInfo.previewLink);
-    console.log(googleBook.items[0].volumeInfo.authors);
+    // console.log(googleBook.items[0].volumeInfo.title);
+    // console.log(googleBook.items[0].volumeInfo.description);
+    // console.log(googleBook.items[0].volumeInfo.imageLinks.smallThumbnail);
+    // console.log(googleBook.items[0].volumeInfo.previewLink);
+    // console.log(googleBook.items[0].volumeInfo.authors);
 
     if (formObject.title && formObject.author) {
       API.saveBook({
@@ -64,19 +72,20 @@ function Books() {
       })
         .then(res => {
           var newAuthor;
-          var num = ["bob", "bill", "mary"];
 
           if(googleBook.items[0].volumeInfo.authors.length > 1) {
-//            var newAuthor = googleBook.items[0].volumeInfo.authors.split(" ");
             newAuthor = googleBook.items[0].volumeInfo.authors.join(", ");
+            }
+            else {
+              newAuthor = googleBook.items[0].volumeInfo.authors[0];
             };
           console.log(newAuthor);
           API.saveBook({
             title: googleBook.items[0].volumeInfo.title,
             image: googleBook.items[0].volumeInfo.imageLinks.smallThumbnail,
-            previewLink: googleBook.items[0].volumeInfo.previewLink,
+            link: googleBook.items[0].volumeInfo.previewLink,
             synopsis: googleBook.items[0].volumeInfo.description,
-            author: newAuthor
+            authors: newAuthor
           })
           loadBooks()
         })
@@ -138,6 +147,33 @@ function Books() {
             )}
           </Col>
         </Row>
+        <Container fluid>
+
+        {/* {googleBook.map(result => ( */}
+          {books.map(book => (
+        <Row key={book._id}>
+          <Col size="md-10 md-offset-1">
+              <h1>
+                {book.title} by {book.author}
+              </h1>
+              <img src= {book.image} />
+            <article>
+              <h1>Synopsis</h1>
+              <p>
+                {book.synopsis}
+              </p>
+            </article>
+            <button>
+              View
+            </button>
+            <button>
+              Save
+            </button>
+          </Col>
+        </Row>
+
+       ))}
+      </Container>
       </Container>
     );
   }
