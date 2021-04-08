@@ -163,9 +163,9 @@ function Books() {
                 {book.synopsis}
               </p>
             </article>
-            <button>
-              View
-            </button>
+            <a href={book.link} className="btn">
+              <button>View</button>
+            </a>
             <button>
               Save
             </button>
