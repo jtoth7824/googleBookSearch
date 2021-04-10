@@ -1,11 +1,13 @@
 import axios from "axios";
-
+//import React, {useState} from "react";
+//import UserContext from "../../utils/userContext";
 //const apiKey = "AIzaSyBE8rew2L7hzqHNcbX1zl03rA4mdytQuu8";
-const searchTerm = "DaVinci Code";
+//const searchTerm = "Star Wars";
 //https://www.googleapis.com/books/v1/volumes?q=
 export default {
   //google api
-  getGoogleBooks: function() {
+  getGoogleBooks: function(searchTerm) {
+    console.log(searchTerm);
       return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + searchTerm);
   },
 

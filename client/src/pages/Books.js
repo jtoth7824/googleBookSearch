@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
+import Project from "../components/Project";
 import API from "../utils/API";
+import UserContext from "../utils/userContext";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import Search from "../components/Search";
 
 function Books() {
   // Setting our component's initial state
@@ -24,12 +27,12 @@ function Books() {
     //   })
     //   .catch(err => console.log(err));
 
-    API.getGoogleBooks()
-      .then(res =>{
-        console.log(res.data)
-        setGoogle(res.data)
-      })
-        .catch(err => console.log(err));
+    // API.getGoogleBooks()
+    //   .then(res =>{
+    //     console.log(res.data)
+    //     setGoogle(res.data)
+    //   })
+    //     .catch(err => console.log(err));
   }, [])
 
   // Loads all books and sets them to books
@@ -85,7 +88,7 @@ function Books() {
             image: googleBook.items[0].volumeInfo.imageLinks.smallThumbnail,
             link: googleBook.items[0].volumeInfo.previewLink,
             synopsis: googleBook.items[0].volumeInfo.description,
-            authors: newAuthor
+            author: newAuthor
           })
           loadBooks()
         })
@@ -117,12 +120,12 @@ function Books() {
                 name="synopsis"
                 placeholder="Synopsis (Optional)"
               />
-              <FormBtn
+{/*               <FormBtn
                 disabled={!(formObject.author && formObject.title)}
                 onClick={handleFormSubmit}
               >
                 Submit Book
-              </FormBtn>
+              </FormBtn> */}
             </form>
           </Col>
           <Col size="md-6 sm-12">
@@ -147,33 +150,34 @@ function Books() {
             )}
           </Col>
         </Row>
-        <Container fluid>
 
-        {/* {googleBook.map(result => ( */}
-          {books.map(book => (
-        <Row key={book._id}>
-          <Col size="md-10 md-offset-1">
-              <h1>
-                {book.title} by {book.author}
-              </h1>
-              <img src= {book.image} />
-            <article>
-              <h1>Synopsis</h1>
-              <p>
-                {book.synopsis}
-              </p>
-            </article>
-            <a href={book.link} className="btn">
-              <button>View</button>
-            </a>
-            <button>
-              Save
-            </button>
-          </Col>
-        </Row>
-
-       ))}
-      </Container>
+      <Row>
+        <Search />
+        <div className="container containerColor marginBottomCont">
+        <div className="row">
+            <div className="marginBottomCol">
+                <div className="card-transparent">
+                    <div className="card-body mt-5">
+                        <h2 className="card-title text-center text-white myBottomBorder1">Results</h2>
+                        <br />
+                        <div className="row row-cols-1">
+                                {books.map(result => (
+                                    <Project 
+                                        id = {result.id}
+                                        author = {result.author}
+                                        image = {result.image}
+                                        title = {result.title}
+                                        description = {result.synopsis}
+                                        link = {result.link}
+                                    />
+                                ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </Row>
       </Container>
     );
   }
