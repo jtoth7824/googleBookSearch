@@ -3,39 +3,34 @@ import UserContext from "../../utils/userContext";
 import API from "../../utils/API";
 
 
-function Project (props) {
+function Save (props) {
 
     const {books} = useContext(UserContext);
 console.log("id = " + props.id);
-    // function saveBook(e) {
-    //       var newAuthor;
-    //       console.log(e.target.id);
-    //       var index;
 
-    //       for (var i=0; i<books.length; i++) {
-    //         if ( books[i].id === e.target.id ) {
-    //             index = i;
-    //             break;
-    //         }
-    //     }
-    //     console.log(books[index].volumeInfo.title);
+        function deleteBook(e) {
+//          var newAuthor;
+          console.log(e.target.id);
+          var index;
 
-    //       if(books[index].volumeInfo.authors.length > 1) {
-    //         newAuthor = books[index].volumeInfo.authors.join(", ");
-    //         }
-    //         else {
-    //           newAuthor = books[index].volumeInfo.authors[0];
-    //         };
-    //       console.log(newAuthor);
-    //       API.saveBook({
-    //         title: books[index].volumeInfo.title,
-    //         image: books[index].volumeInfo.imageLinks.smallThumbnail,
-    //         link: books[index].volumeInfo.previewLink,
-    //         synopsis: books[index].volumeInfo.description,
-    //         author: newAuthor
-    //       })
-    //     .catch(err => console.log(err));
-    // }
+          for (var i=0; i<books.length; i++) {
+            if ( books[i].id === e.target.id ) {
+                index = i;
+                break;
+            }
+        }
+        console.log(books[index].volumeInfo.title);
+
+//          if(books[index].volumeInfo.authors.length > 1) {
+//            newAuthor = books[index].volumeInfo.authors.join(", ");
+//            }
+//            else {
+//              newAuthor = books[index].volumeInfo.authors[0];
+//            };
+          console.log(books[index]._id);
+          API.deleteBook(books[index]._id)
+        .catch(err => console.log(err));
+    }
 
     return (
         <div>
@@ -51,7 +46,7 @@ console.log("id = " + props.id);
                         <a  href={props.link} target="_blank" rel="noreferrer noopener"
                             className="btn myButton buttonMargin">View</a>
                         <a id={props.id} target="_blank" rel="noreferrer noopener"
-                            className="btn myButton buttonMargin" onClick={saveBook}>Save</a>
+                            className="btn myButton buttonMargin" onClick={deleteBook}>Delete</a>
                     </div>
                     <div className="row" style={{display: 'inline-block'}}>
                         <img style={{float: 'left'}} src={props.image}/>
@@ -64,4 +59,4 @@ console.log("id = " + props.id);
     );
 }
 
-export default Project;
+export default Save;

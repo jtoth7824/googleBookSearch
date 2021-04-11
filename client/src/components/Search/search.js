@@ -8,6 +8,7 @@ import CardBtn from "../CardBtn";
 // import Navbar from "../Nav";
 import Project from "../Project";
 import SearchResults from "../SearchResults";
+import SavedBooks from "../SavedBooks";
 
 function Search() {
    const [books, setBooks] = useState([]);
@@ -54,6 +55,7 @@ console.log(book);
               </CardBtn> 
     </form>
             <SearchResults />
+            <SavedBooks />
       </div>
 
  </UserContext.Provider>
