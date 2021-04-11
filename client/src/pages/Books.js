@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
-import Project from "../components/Project";
+// import Project from "../components/Project";
 import API from "../utils/API";
-import UserContext from "../utils/userContext";
+// import UserContext from "../utils/userContext";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
@@ -153,30 +153,7 @@ function Books() {
 
       <Row>
         <Search />
-        <div className="container containerColor marginBottomCont">
-        <div className="row">
-            <div className="marginBottomCol">
-                <div className="card-transparent">
-                    <div className="card-body mt-5">
-                        <h2 className="card-title text-center text-white myBottomBorder1">Results</h2>
-                        <br />
-                        <div className="row row-cols-1">
-                                {books.map(result => (
-                                    <Project 
-                                        id = {result.id}
-                                        author = {result.author}
-                                        image = {result.image}
-                                        title = {result.title}
-                                        description = {result.synopsis}
-                                        link = {result.link}
-                                    />
-                                ))}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
     </Row>
       </Container>
     );
