@@ -16,7 +16,7 @@ function App() {
             <Books />
           </Route>
           <Route exact path="/books/:id">
-            <DetailGoogle />
+
           </Route>
           <Route>
             <NoMatch />

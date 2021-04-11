@@ -7,7 +7,7 @@ import UserContext from "../../utils/userContext";
 import CardBtn from "../CardBtn";
 // import Navbar from "../Nav";
 import Project from "../Project";
-import JohnTry from "../JohnTry";
+import SearchResults from "../SearchResults";
 
 function Search() {
    const [books, setBooks] = useState([]);
@@ -53,7 +53,7 @@ console.log(book);
                     <CardBtn>
               </CardBtn> 
     </form>
-            <JohnTry />
+            <SearchResults />
       </div>
 
  </UserContext.Provider>

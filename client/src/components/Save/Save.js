@@ -7,35 +7,35 @@ function Project (props) {
 
     const {books} = useContext(UserContext);
 console.log("id = " + props.id);
-    function saveBook(e) {
-          var newAuthor;
-          console.log(e.target.id);
-          var index;
+    // function saveBook(e) {
+    //       var newAuthor;
+    //       console.log(e.target.id);
+    //       var index;
 
-          for (var i=0; i<books.length; i++) {
-            if ( books[i].id === e.target.id ) {
-                index = i;
-                break;
-            }
-        }
-        console.log(books[index].volumeInfo.title);
+    //       for (var i=0; i<books.length; i++) {
+    //         if ( books[i].id === e.target.id ) {
+    //             index = i;
+    //             break;
+    //         }
+    //     }
+    //     console.log(books[index].volumeInfo.title);
 
-          if(books[index].volumeInfo.authors.length > 1) {
-            newAuthor = books[index].volumeInfo.authors.join(", ");
-            }
-            else {
-              newAuthor = books[index].volumeInfo.authors[0];
-            };
-          console.log(newAuthor);
-          API.saveBook({
-            title: books[index].volumeInfo.title,
-            image: books[index].volumeInfo.imageLinks.smallThumbnail,
-            link: books[index].volumeInfo.previewLink,
-            synopsis: books[index].volumeInfo.description,
-            author: newAuthor
-          })
-        .catch(err => console.log(err));
-    }
+    //       if(books[index].volumeInfo.authors.length > 1) {
+    //         newAuthor = books[index].volumeInfo.authors.join(", ");
+    //         }
+    //         else {
+    //           newAuthor = books[index].volumeInfo.authors[0];
+    //         };
+    //       console.log(newAuthor);
+    //       API.saveBook({
+    //         title: books[index].volumeInfo.title,
+    //         image: books[index].volumeInfo.imageLinks.smallThumbnail,
+    //         link: books[index].volumeInfo.previewLink,
+    //         synopsis: books[index].volumeInfo.description,
+    //         author: newAuthor
+    //       })
+    //     .catch(err => console.log(err));
+    // }
 
     return (
         <div>

@@ -19,20 +19,6 @@ function Books() {
   // Load all books and store them with setBooks
   useEffect(() => {
     loadBooks();
-
-    // API.getEnvVars()
-    //   .then(res=> {
-    //     console.log("inenvVars");
-    //     console.log(res.apiKey);
-    //   })
-    //   .catch(err => console.log(err));
-
-    // API.getGoogleBooks()
-    //   .then(res =>{
-    //     console.log(res.data)
-    //     setGoogle(res.data)
-    //   })
-    //     .catch(err => console.log(err));
   }, [])
 
   // Loads all books and sets them to books
