@@ -1,10 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Books from "./pages/Books";
-import Detail from "./pages/Detail";
-import DetailGoogle from "./pages/DetailGoogle";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
+import SavedBooks from "./components/SavedBooks";
 
 function App() {
   return (
@@ -17,6 +16,9 @@ function App() {
           </Route>
           <Route exact path="/books/:id">
 
+          </Route>
+          <Route exact path="/save">
+            <SavedBooks />
           </Route>
           <Route>
             <NoMatch />

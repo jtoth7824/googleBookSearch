@@ -1,20 +1,15 @@
 import React, { useState, useEffect } from "react";
 import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
-// import Project from "../components/Project";
 import API from "../utils/API";
-// import UserContext from "../utils/userContext";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
 import Search from "../components/Search";
 
 function Books() {
   // Setting our component's initial state
   const [books, setBooks] = useState([])
-  const [formObject, setFormObject] = useState({})
-  const [googleBook, setGoogle] = useState([]);
 
   // Load all books and store them with setBooks
   useEffect(() => {
@@ -37,87 +32,13 @@ function Books() {
       .catch(err => console.log(err));
   }
 
-  // Handles updating component state when the user types into the input field
-  function handleInputChange(event) {
-    const { name, value } = event.target;
-    setFormObject({...formObject, [name]: value})
-  };
-
-  // When the form is submitted, use the API.saveBook method to save the book data
-  // Then reload books from the database
-  function handleFormSubmit(event) {
-    event.preventDefault();
-    // console.log(googleBook.items[0].volumeInfo.title);
-    // console.log(googleBook.items[0].volumeInfo.description);
-    // console.log(googleBook.items[0].volumeInfo.imageLinks.smallThumbnail);
-    // console.log(googleBook.items[0].volumeInfo.previewLink);
-    // console.log(googleBook.items[0].volumeInfo.authors);
-
-    if (formObject.title && formObject.author) {
-      API.saveBook({
-        title: formObject.title,
-        author: formObject.author,
-        synopsis: formObject.synopsis
-      })
-        .then(res => {
-          var newAuthor;
-
-          if(googleBook.items[0].volumeInfo.authors.length > 1) {
-            newAuthor = googleBook.items[0].volumeInfo.authors.join(", ");
-            }
-            else {
-              newAuthor = googleBook.items[0].volumeInfo.authors[0];
-            };
-          console.log(newAuthor);
-          API.saveBook({
-            title: googleBook.items[0].volumeInfo.title,
-            image: googleBook.items[0].volumeInfo.imageLinks.smallThumbnail,
-            link: googleBook.items[0].volumeInfo.previewLink,
-            synopsis: googleBook.items[0].volumeInfo.description,
-            author: newAuthor
-          })
-          loadBooks()
-        })
-        .catch(err => console.log(err));
-
-    }
-  };
-
-    return (
-      <Container fluid>
-        <Row>
-          <Col size="md-6">
-            <Jumbotron>
-              <h1>What Books Should I Read?</h1>
-            </Jumbotron>
-            <form>
-              <Input
-                onChange={handleInputChange}
-                name="title"
-                placeholder="Title (required)"
-              />
-              <Input
-                onChange={handleInputChange}
-                name="author"
-                placeholder="Author (required)"
-              />
-              <TextArea
-                onChange={handleInputChange}
-                name="synopsis"
-                placeholder="Synopsis (Optional)"
-              />
-{/*               <FormBtn
-                disabled={!(formObject.author && formObject.title)}
-                onClick={handleFormSubmit}
-              >
-                Submit Book
-              </FormBtn> */}
-            </form>
-          </Col>
-          <Col size="md-6 sm-12">
-            <Jumbotron>
-              <h1>Books On My List</h1>
-            </Jumbotron>
+  return (
+    <Container fluid>
+      <Row>
+        <Col size="md-6 sm-12">
+          <Jumbotron>
+            <h1>Books On My List</h1>
+          </Jumbotron>
             {books.length ? (
               <List>
                 {books.map(book => (
@@ -133,17 +54,14 @@ function Books() {
               </List>
             ) : (
               <h3>No Results to Display</h3>
-            )}
-          </Col>
-        </Row>
-
+            )};
+        </Col>
+      </Row>
       <Row>
         <Search />
-
-    </Row>
-      </Container>
-    );
-  }
-
+      </Row>
+    </Container>
+  );
+}
 
 export default Books;
