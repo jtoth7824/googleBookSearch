@@ -1,0 +1,118 @@
+/* make header (h1-h6) tags not appear as they are just there to account for valid html structure when using semantic tags */
+/* .invisible {
+  display: none;
+} */
+
+/* styling for items in the navbar */
+.articleContainer {
+  width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.captionSize {
+  font-size: 24px;
+}
+
+.johnNavLink {
+  display: block;
+  padding: .5rem 0 .5rem 1rem;
+  font-size: 20px;
+}
+.brand {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: rgb(127, 125, 129);
+}
+
+.embedSize {
+  height: 750px;
+  width: 75%;
+}
+
+.card {
+  margin: 10px 0px;
+}
+
+.aboutTextColor {
+  color: rgb(127, 125, 129);
+}
+
+/* styling for bottom of container */
+.marginBottomCont {
+  margin-bottom: 150px;
+}
+
+/* styling for buttons */
+.myButton {
+  color: #fff;
+  background-color: rgb(127, 125, 129);
+  border-color: rgb(127, 125, 129);
+  margin-right: 5px !important;
+}
+
+/* styling to keep column items separated */
+.marginBottomCol {
+  margin-bottom: 20px;
+}
+
+/* styling for background of pages */
+/* body {
+  background-image: url("./images/GrayXL.png");
+  background-attachment: fixed;
+} */
+
+/* styling for border bottom for Card object in grid */
+.myBottomBorder {
+  border-bottom-width: 5px !important;
+  border-bottom-style: solid !important;
+
+  border-bottom-color: gray;
+}
+.myBottomBorder1 {
+  border-bottom-width: 5px !important;
+  border-bottom-style: solid !important;
+
+  border-bottom-color: white;
+}
+/* generic padding amount */
+.padding {
+  padding-right: 20px;
+}
+
+
+.card {
+  border-radius: 20px;
+}
+
+.card-img-top {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+/* styling for personal picture on About Me page */
+/* .johnPic {
+  max-width: 100%;
+  height: auto;
+  max-height: 260px;
+} */
+
+/* styling for the footer */
+.myFooter {
+      padding: 5px 0;
+      margin: 0;
+}
+
+.buttonMargin {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.cardBodyBorder {
+  border-top-width: 1px !important;
+  border-top-style: solid !important;
+  border-top-color: gray;
+}

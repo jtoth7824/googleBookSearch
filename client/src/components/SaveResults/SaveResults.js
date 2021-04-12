@@ -43,7 +43,7 @@ var bookIndex;
                         </div>
                         <div style={{ float: 'right'}}>
                             <a  href={props.link} target="_blank" rel="noreferrer noopener"
-                                className="btn myButton buttonMargin"><button target={props.link} rel="noreferrer noopener" className="btn myButton buttonMargin">View</button></a>
+                                ><button target={props.link} rel="noreferrer noopener" className="btn myButton buttonMargin">View</button></a>
                             <button id={props.id} target="_blank" rel="noreferrer noopener"
                                 className="btn myButton buttonMargin" onClick={deleteBook}>Delete</button>
                         </div>

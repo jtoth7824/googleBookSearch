@@ -22,10 +22,10 @@ function SearchResults () {
                                                 <DisplayBooks 
                                                     id = {result.id}
                                                     author = {result.volumeInfo.authors}
-                                                    image = {result.volumeInfo.imageLinks.smallThumbnail}
+                                                    image = {result.volumeInfo.imageLinks ? result.volumeInfo.imageLinks.thumbnail : "https://dummyimage.com/128x206/c4bfb2/051421.jpg&text=No+Image+"}
                                                     title = {result.volumeInfo.title}
-                                                    description = {result.volumeInfo.description}
-                                                    link = {result.volumeInfo.previewLink}
+                                                    description = {result.volumeInfo.description ? result.volumeInfo.description : "No description available for this book."}
+                                                    link = {result.volumeInfo.infoLink}
                                                 />
                                             </div>
                                         ))}

@@ -30,9 +30,9 @@ function Project (props) {
         console.log(newAuthor);
         API.saveBook({
             title: books[index].volumeInfo.title,
-            image: books[index].volumeInfo.imageLinks.smallThumbnail,
-            link: books[index].volumeInfo.previewLink,
-            synopsis: books[index].volumeInfo.description,
+            image: books[index].volumeInfo.imageLinks ? books[index].volumeInfo.imageLinks.thumbnail : "https://dummyimage.com/128x206/c4bfb2/051421.jpg&text=No+Image+",
+            link: books[index].volumeInfo.infoLink,
+            synopsis: books[index].volumeInfo.description ? books[index].volumeInfo.description : "No description available for this book.",
             author: newAuthor
         })
         .catch(err => console.log(err));
@@ -49,7 +49,7 @@ function Project (props) {
                         </div>
                         <div style={{ float: 'right'}}>
                             <a  href={props.link} target="_blank" rel="noreferrer noopener"
-                                className="btn myButton buttonMargin"><button target={props.link} rel="noreferrer noopener" className="btn myButton buttonMargin">View</button></a>
+                                ><button className="btn myButton buttonMargin" target={props.link} rel="noreferrer noopener" className="btn myButton buttonMargin">View</button></a>
                             <button id={props.id} target="_blank" rel="noreferrer noopener"
                                 className="btn myButton buttonMargin" onClick={saveBook}>Save</button>
                         </div>

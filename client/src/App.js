@@ -4,12 +4,13 @@ import SearchBooks from "./pages/SearchBooks";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import SavedBooks from "./pages/SavedBooks";
+import Header from "./components/Header";
 
 function App() {
   return (
-    <Router>
+    <Router basename={`${process.env.PUBLIC_URL}/`}>
       <div>
-        <Nav />
+        <Header />
         <Switch>
           <Route exact path={["/", "/books"]}>
             <SearchBooks />
