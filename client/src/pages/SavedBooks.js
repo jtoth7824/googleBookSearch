@@ -2,6 +2,8 @@ import React, {useState, useEffect} from "react";
 import API from "../utils/API";
 import SavedBooksContext from "../utils/savedBooksContext";
 import SaveResults from "../components/SaveResults";
+import Jumbotron from "../components/Jumbotron";
+import {Container} from "../components/Grid";
 
 function SavedBooks () {
 
@@ -26,12 +28,20 @@ function SavedBooks () {
 
     return (
         <SavedBooksContext.Provider value={{ books1, trigger}}>
-            <div className="container containerColor marginBottomCont">
-                <div className="row">
+            <Container fluid>
+
+            <Jumbotron>
+              <h1>Google Books Search</h1>
+              <br>
+              </br>
+              <h3>Search for and Save Books of Interest</h3>
+            </Jumbotron>
+            <div className="container-fluid containerColor marginBottomCont">
+                <div className="row justify-content-center">
                     <div className="marginBottomCol">
-                        <div className="card-transparent">
-                            <div className="card-body mt-5">
-                                <h2 className="card-title text-center myBottomBorder1">Saved Results</h2>
+                        <div className="card h-100">
+                            <div className="card-body">
+                                <h2 className="card-title myBottomBorder1">Saved Books</h2>
                                 <br />
                                 <div className="row row-cols-1">
                                     {books1.length ? (
@@ -59,6 +69,7 @@ function SavedBooks () {
                    </div>
                </div>
            </div>
+           </Container>
         </SavedBooksContext.Provider>
     )
 }

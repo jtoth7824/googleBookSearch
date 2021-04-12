@@ -48,8 +48,8 @@ var bookIndex;
                                 className="btn myButton buttonMargin" onClick={deleteBook}>Delete</button>
                         </div>
                         <div className="row" style={{display: 'inline-block'}}>
-                            <img style={{float: 'left'}} src={props.image} alt="savedbooks"/>
-                            <p className="card-text">{props.description}</p>
+                            <img className="padding" style={{float: 'left'}} src={props.image} alt="savedbooks"/>
+                            <p className="card-text card-padding">{props.description}</p>
                         </div>
                     </div>
                 </div>

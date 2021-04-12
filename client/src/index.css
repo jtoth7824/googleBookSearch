@@ -25,7 +25,7 @@
   font-size: 20px;
   margin-top: 10px;
   margin-bottom: 10px;
-  color: rgb(127, 125, 129);
+  color: rgb(125, 129, 128);
 }
 
 .embedSize {
@@ -49,14 +49,25 @@
 /* styling for buttons */
 .myButton {
   color: #fff;
-  background-color: rgb(127, 125, 129);
-  border-color: rgb(127, 125, 129);
+  background-color: rgb(128, 90, 167);
+  border-color: rgb(128, 90, 167);
   margin-right: 5px !important;
 }
 
 /* styling to keep column items separated */
 .marginBottomCol {
   margin-bottom: 20px;
+}
+
+.jumbotron {
+  height: 300;
+  clear: "both";
+  padding-top: 120;
+  text-align: "center";
+  background-image: url("./images/pngfind.com-books-on-shelf-png-6910048.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50%;
 }
 
 /* styling for background of pages */
@@ -83,11 +94,9 @@
   padding-right: 20px;
 }
 
-
-.card {
-  border-radius: 20px;
+.interiorCardColor {
+  background-color: rgb(128, 90, 167)
 }
-
 .card-img-top {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -111,8 +120,17 @@
   margin-bottom: 5px;
 }
 
-.cardBodyBorder {
+.card-padding {
+  padding: 5px;
+  margin: 5px;
+}
+
+.interiorCardColor {
+  background-color: rgb(128, 90, 167)
+}
+
+/* .cardBodyBorder {
   border-top-width: 1px !important;
   border-top-style: solid !important;
   border-top-color: gray;
-}
+} */

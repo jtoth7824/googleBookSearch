@@ -49,13 +49,13 @@ function Project (props) {
                         </div>
                         <div style={{ float: 'right'}}>
                             <a  href={props.link} target="_blank" rel="noreferrer noopener"
-                                ><button className="btn myButton buttonMargin" target={props.link} rel="noreferrer noopener" className="btn myButton buttonMargin">View</button></a>
+                                ><button className="btn myButton buttonMargin" target={props.link} rel="noreferrer noopener" >View</button></a>
                             <button id={props.id} target="_blank" rel="noreferrer noopener"
                                 className="btn myButton buttonMargin" onClick={saveBook}>Save</button>
                         </div>
                         <div className="row" style={{display: 'inline-block'}}>
-                            <img style={{float: 'left'}} src={props.image} alt="book"/>
-                            <p className="card-text">{props.description}</p>
+                            <img className="padding" style={{float: 'left', height: '170px', width: '128px'}} src={props.image} alt="book"/>
+                            <p className="card-text card-padding">{props.description}</p>
                         </div>
                     </div>
                 </div>

@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import API from "../utils/API";
 import UserContext from "../utils/userContext";
 import CardBtn from "../components/CardBtn";
+import Jumbotron from "../components/Jumbotron";
 import SearchResults from "../components/SearchResults";
 import { Row, Container } from "../components/Grid";
 
@@ -31,10 +32,19 @@ function Search() {
 
     return (
       <Container fluid>
+                    <Jumbotron>
+              <h1>Google Books Search</h1>
+              <br>
+              </br>
+              <h3>Search for and Save Books of Interest</h3>
+            </Jumbotron>
         <Row>
           <UserContext.Provider value={{books, searchTerm, handleBtnClick}}>
             <div className="container-fluid">
-              <form className="searchForm justify-content-center form-inline m-2">
+              <div className="card">
+                <h4><strong>Book Search</strong></h4>
+                <br />
+              <form className=" form-inline">
                 <input
                   value={searchTerm}
                   onChange={whichSearchTerm}
@@ -47,8 +57,10 @@ function Search() {
                   if (e.key === 'Enter') e.preventDefault();
                   }}
                 />
-                <CardBtn /> 
+              <CardBtn /> 
               </form>
+
+              </div>
               <SearchResults />
             </div>
           </UserContext.Provider>

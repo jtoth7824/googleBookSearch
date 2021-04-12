@@ -7,13 +7,13 @@ function SearchResults () {
     const {books} = useContext(UserContext);
 
     return (
-        <div className="container containerColor marginBottomCont">
-            <div className="row">
+        <div className="container-fluid containerColor marginBottomCont">
+            <div className="row justify-content-center">
                 <div className="marginBottomCol">
-                    <div className="card-transparent">
-                        <div className="card-body mt-5">
-                            <h2 className="card-title text-center myBottomBorder1">Search Results</h2>
-                            <br />
+                    <div className="card ">
+                        <div className="card-body interiorCardColor h-100">
+                            <h2 className="card-title text-center myBottomBorder1"><strong>Search Results</strong></h2>
+
                             <div className="row row-cols-1">
                                 {books.length ? (
                                     <div>
@@ -32,7 +32,7 @@ function SearchResults () {
                                     </div>
                                 ) : (
                                     <h3>No Results to Display</h3>
-                                )};
+                                )}
                             </div>
                         </div>
                     </div>
