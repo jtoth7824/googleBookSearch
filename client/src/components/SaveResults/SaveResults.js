@@ -2,7 +2,7 @@ import React, { useCallback, useContext} from "react";
 import SavedBooksContext from "../../utils/savedBooksContext";
 import API from "../../utils/API";
 
-function Save (props) {
+function SaveResults (props) {
 var bookIndex;
     const {books1} = useContext(SavedBooksContext);
     console.log(props);
@@ -43,7 +43,7 @@ var bookIndex;
                         </div>
                         <div style={{ float: 'right'}}>
                             <a  href={props.link} target="_blank" rel="noreferrer noopener"
-                                className="btn myButton buttonMargin">View</a>
+                                className="btn myButton buttonMargin"><button target={props.link} rel="noreferrer noopener" className="btn myButton buttonMargin">View</button></a>
                             <button id={props.id} target="_blank" rel="noreferrer noopener"
                                 className="btn myButton buttonMargin" onClick={deleteBook}>Delete</button>
                         </div>
@@ -58,4 +58,4 @@ var bookIndex;
     );
 }
 
-export default Save;
+export default SaveResults;

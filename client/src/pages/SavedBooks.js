@@ -1,35 +1,28 @@
 import React, {useState, useEffect} from "react";
-import API from "../../utils/API";
-import SavedBooksContext from "../../utils/savedBooksContext";
-import Save from "../Save";
+import API from "../utils/API";
+import SavedBooksContext from "../utils/savedBooksContext";
+import SaveResults from "../components/SaveResults";
 
 function SavedBooks () {
 
     const [books1, setBooks1]= useState([]);
     const [trigger, setTrigger] = useState("1");
-    // const {books1 } = useContext(UserContext);
-  // Deletes a book from the database with a given id, then reloads books from the db
-//   function deleteBook(id) {
-//     API.deleteBook(id)
-//       .then(res => loadBooks1())
-//       .catch(err => console.log(err));
-//   }
 
     // Load all books and store them with setBooks
     useEffect(() => {
         loadBooks1();
       }, [trigger])
 
-  // Loads all books and sets them to books
-  function loadBooks1() {
-    API.getBooks()
-      .then(res => {
-        console.log(res.data)
-        setBooks1(res.data)
-      }
-      )
-      .catch(err => console.log(err));
-  };
+    // Loads all books and sets them to books
+    function loadBooks1() {
+        API.getBooks()
+          .then(res => {
+            console.log(res.data)
+            setBooks1(res.data)
+          }
+          )
+        .catch(err => console.log(err));
+    };
 
     return (
         <SavedBooksContext.Provider value={{ books1, trigger}}>
@@ -45,7 +38,7 @@ function SavedBooks () {
                                         <div>
                                             {books1.map(result => (
                                                 <div key={result._id}>
-                                                    <Save 
+                                                    <SaveResults 
                                                         newValue={trigger} change={setTrigger}
                                                         id = {result._id}
                                                         author = {result.author}
@@ -71,4 +64,3 @@ function SavedBooks () {
 }
 
 export default SavedBooks;
-

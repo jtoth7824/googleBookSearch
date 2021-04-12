@@ -7,7 +7,7 @@ function CardBtn(props) {
   const { handleBtnClick } = useContext(UserContext);
 
   return (
-    <button onClick={handleBtnClick} />
+    <button className="btn myButton buttonMargin" onClick={handleBtnClick}>Search</button>
   );
 }
 
