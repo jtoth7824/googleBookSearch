@@ -59,7 +59,7 @@ function Search() {
               <CardBtn /> 
               </form>
             </div>
-            <SearchResults />
+            <SearchResults newValue={books} change={setBooks}/>
           </div>
         </UserContext.Provider>
         </Row>

@@ -6,9 +6,8 @@ function Navbar() {
     const location = useLocation();
   return (
 
-    <div className="articleContainer">
         <div className="navbar navbar-expand-lg navbar-light bg-light">
-            <div className="container">
+
                 <Link className="mr-auto brand font-weight-bold" to="/" >
                     Google Book Search
                 </Link>
@@ -39,8 +38,8 @@ function Navbar() {
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+
+
   );
 }
 

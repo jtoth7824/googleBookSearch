@@ -61,8 +61,8 @@ function SavedBooks () {
                             </div>
                         </div>
                     ) : (
-                        <div class="row text-center h-100">
-                            <div class="col-md-12 text-center my-auto">
+                        <div classNane="row text-center h-100">
+                            <div className="col-md-12 text-center my-auto">
                                 <h3><strong>No Saved Books</strong></h3>
                             </div>
                         </div>

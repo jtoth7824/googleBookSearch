@@ -2,10 +2,10 @@ import React, { useContext} from "react";
 import UserContext from "../../utils/userContext";
 import DisplayBooks from "../DisplayBooks";
 
-function SearchResults () {
+function SearchResults (props) {
 
     const {books} = useContext(UserContext);
-
+console.log(props.newValue, props.change);
     return (
         <div className="container-fluid containerColor marginBottomCont">
             {books.length ? (            
@@ -18,6 +18,8 @@ function SearchResults () {
                                     {books.map(result => (
                                         <div key={result.id}>
                                             <DisplayBooks 
+                                                johnBooks={props.newValue}
+                                                johnMethod={props.change}
                                                 id = {result.id}
                                                 author = {result.volumeInfo.authors ? result.volumeInfo.authors.join(", ") : "No authors provided."}
                                                 image = {result.volumeInfo.imageLinks ? result.volumeInfo.imageLinks.thumbnail : "https://dummyimage.com/128x206/c4bfb2/051421.jpg&text=No+Image+"}

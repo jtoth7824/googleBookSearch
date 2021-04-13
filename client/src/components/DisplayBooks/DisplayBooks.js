@@ -1,10 +1,16 @@
-import React, { useContext} from "react";
+import React, { useCallback, useContext} from "react";
 import UserContext from "../../utils/userContext";
 import API from "../../utils/API";
 
 function Project (props) {
-
+    var bookIndex;
     const {books} = useContext(UserContext);
+    var setBooksMethod = props.johnMethod;
+
+    const updateBooks = useCallback( (bookIndex) => {
+        console.log("in updatebooks");
+        setBooksMethod(bookList => bookList.filter(c=>c.id !== bookIndex));
+    }, [setBooksMethod])
 
     console.log("id = " + props.id);
     function saveBook(e) {
@@ -31,12 +37,17 @@ function Project (props) {
             newAuthor = books[index].volumeInfo.authors[0];
         };
         console.log(newAuthor);
+        bookIndex = books[index].id;
         API.saveBook({
             title: books[index].volumeInfo.title,
             image: books[index].volumeInfo.imageLinks ? books[index].volumeInfo.imageLinks.thumbnail : "https://dummyimage.com/128x206/c4bfb2/051421.jpg&text=No+Image+",
             link: books[index].volumeInfo.infoLink,
             synopsis: books[index].volumeInfo.description ? books[index].volumeInfo.description : "No description available for this book.",
             author: newAuthor
+        })
+        .then(res => {
+            console.log("is this true" + bookIndex);
+            updateBooks(bookIndex);
         })
         .catch(err => console.log(err));
     }
