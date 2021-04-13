@@ -19,7 +19,7 @@ function SearchResults () {
                                         <div key={result.id}>
                                             <DisplayBooks 
                                                 id = {result.id}
-                                                author = {result.volumeInfo.authors}
+                                                author = {result.volumeInfo.authors ? result.volumeInfo.authors.join(", ") : "No authors provided."}
                                                 image = {result.volumeInfo.imageLinks ? result.volumeInfo.imageLinks.thumbnail : "https://dummyimage.com/128x206/c4bfb2/051421.jpg&text=No+Image+"}
                                                 title = {result.volumeInfo.title}
                                                 description = {result.volumeInfo.description ? result.volumeInfo.description : "No description available for this book."}
@@ -36,6 +36,8 @@ function SearchResults () {
                 <div>
                     <div className="row text-center h-100">
                         <div className="col-md-12 text-center my-auto">
+                            <br />
+                            <br />
                             <h3><strong>No Results to Display.</strong></h3>
                         </div>
                     </div>

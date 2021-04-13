@@ -7,7 +7,7 @@ function CardBtn(props) {
   const { handleBtnClick } = useContext(UserContext);
 
   return (
-    <button className="btn myButton buttonMargin" style={{float: "right"}} onClick={handleBtnClick}>Search</button>
+    <button className="btn myButton buttonMargin" style={{float: "right", fontSize: "20px"}} onClick={handleBtnClick}><strong>Search</strong></button>
   );
 }
 

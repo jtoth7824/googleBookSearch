@@ -21,7 +21,10 @@ function Project (props) {
         }
         console.log(books[index].volumeInfo.title);
 
-        if(books[index].volumeInfo.authors.length > 1) {
+        if(!books[index].volumeInfo.authors) {
+            newAuthor = "No Author provided.";
+        }
+        else if(books[index].volumeInfo.authors.length > 1) {
             newAuthor = books[index].volumeInfo.authors.join(", ");
         }
         else {

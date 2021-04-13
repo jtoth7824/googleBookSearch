@@ -36,7 +36,7 @@ var bookIndex;
         <div>
             <div className="col-xs-12 col-sm-12  marginBottomCol" key={props.id}>
                 <div className="card h-100">
-                   <div className="card-body cardBodyBorder">
+                   <div className="card-body bookCardColor cardBodyBorder">
                         <div className="row" style={{display: 'inline-block'}}>
                             <h5 className="card-title">{props.title}</h5>
                             <h5>Written by {props.author}</h5>

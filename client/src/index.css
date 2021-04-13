@@ -49,9 +49,10 @@
 /* styling for buttons */
 .myButton {
   color: #fff;
-  background-color: rgb(128, 90, 167);
-  border-color: rgb(128, 90, 167);
+  background-color: rgb(39, 129, 83);
+  border-color: rgb(39, 129, 83);
   margin-right: 5px !important;
+  font-size: 20px;
 }
 
 /* styling to keep column items separated */
@@ -96,9 +97,20 @@ body {
 .padding {
   padding-right: 20px;
 }
-
+/* form padding amount */
+.formPadding {
+  padding: 5px 20px;
+}
 .interiorCardColor {
   background-color: rgb(250, 240, 151)
+}
+
+input[type="text"] {
+  background-color : rgb(247, 244, 233, 0391); 
+}
+
+input[type=text]:focus {
+  background-color: rgb(247, 244, 233, 0391);
 }
 
 .bookCardColor {
