@@ -21,30 +21,26 @@ function SavedBooks () {
           .then(res => {
             console.log(res.data)
             setBooks1(res.data)
-          }
-          )
+          })
         .catch(err => console.log(err));
     };
 
     return (
         <SavedBooksContext.Provider value={{ books1, trigger}}>
             <Container fluid>
-
-            <Jumbotron>
-              <h1>Google Books Search</h1>
-              <br>
-              </br>
-              <h3>Search for and Save Books of Interest</h3>
-            </Jumbotron>
-            <div className="container-fluid containerColor marginBottomCont">
-                <div className="row justify-content-center">
-                    <div className="marginBottomCol">
-                        <div className="card h-100">
-                            <div className="card-body">
-                                <h2 className="card-title myBottomBorder1">Saved Books</h2>
-                                <br />
-                                <div className="row row-cols-1">
-                                    {books1.length ? (
+                <Jumbotron>
+                  <h1>Google Books Search</h1>
+                  <br>
+                  </br>
+                  <h3>Search for and Save Books of Interest</h3>
+                </Jumbotron>
+                <div className="container-fluid containerColor marginBottomCont">
+                    {books1.length ? (
+                        <div className="row">
+                            <div className="card">
+                                <div className="card-body interiorCardColor">
+                                    <h2 className="card-title ">Saved Books</h2>
+                                    <div className="row row-cols-1">
                                         <div>
                                             {books1.map(result => (
                                                 <div key={result._id}>
@@ -56,20 +52,23 @@ function SavedBooks () {
                                                         title = {result.title}
                                                         description = {result.synopsis}
                                                         link = {result.link}
-                                                   />
+                                                    />
                                                 </div>
                                             ))}
                                         </div>
-                                    ) : (
-                                        <h3>No Results to Display</h3>
-                                    )};
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                   </div>
-               </div>
-           </div>
-           </Container>
+                    ) : (
+                        <div class="row text-center h-100">
+                            <div class="col-md-12 text-center my-auto">
+                                <h3><strong>No Saved Books</strong></h3>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            </Container>
         </SavedBooksContext.Provider>
     )
 }

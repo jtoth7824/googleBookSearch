@@ -32,19 +32,19 @@ function Search() {
 
     return (
       <Container fluid>
-                    <Jumbotron>
-              <h1>Google Books Search</h1>
-              <br>
-              </br>
-              <h3>Search for and Save Books of Interest</h3>
-            </Jumbotron>
+        <Jumbotron>
+          <h1>Google Books Search</h1>
+          <br>
+          </br>
+          <h3>Search for and Save Books of Interest</h3>
+        </Jumbotron>
         <Row>
-          <UserContext.Provider value={{books, searchTerm, handleBtnClick}}>
-            <div className="container-fluid">
-              <div className="card">
-                <h4><strong>Book Search</strong></h4>
-                <br />
-              <form className=" form-inline">
+        <UserContext.Provider value={{books, searchTerm, handleBtnClick}}>
+          <div className="container-fluid">
+            <div className="card interiorCardColor">
+              <h4><strong>Book Search</strong></h4>
+              <br />
+              <form >
                 <input
                   value={searchTerm}
                   onChange={whichSearchTerm}
@@ -59,11 +59,10 @@ function Search() {
                 />
               <CardBtn /> 
               </form>
-
-              </div>
-              <SearchResults />
             </div>
-          </UserContext.Provider>
+            <SearchResults />
+          </div>
+        </UserContext.Provider>
         </Row>
       </Container>
     );

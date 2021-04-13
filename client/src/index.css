@@ -64,12 +64,15 @@
   clear: "both";
   padding-top: 120;
   text-align: "center";
-  background-image: url("./images/pngfind.com-books-on-shelf-png-6910048.png");
+  background-image: url("./images/pngfind.com-books-png-591502.png");
   background-repeat: no-repeat;
   background-size: cover;
   height: 50%;
 }
 
+body {
+  background-color: rgb(247, 244, 233, 0.391);
+}
 /* styling for background of pages */
 /* body {
   background-image: url("./images/GrayXL.png");
@@ -95,7 +98,11 @@
 }
 
 .interiorCardColor {
-  background-color: rgb(128, 90, 167)
+  background-color: rgb(250, 240, 151)
+}
+
+.bookCardColor {
+  background-color: rgb(247, 244, 233, 0.391);
 }
 .card-img-top {
   border-top-left-radius: 20px;
@@ -124,10 +131,10 @@
   padding: 5px;
   margin: 5px;
 }
-
+/* 
 .interiorCardColor {
   background-color: rgb(128, 90, 167)
-}
+} */
 
 /* .cardBodyBorder {
   border-top-width: 1px !important;
