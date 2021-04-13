@@ -7,7 +7,6 @@ function Navbar() {
   return (
 
         <div className="navbar navbar-expand-lg navbar-light bg-light">
-
                 <Link className="mr-auto brand font-weight-bold" to="/" >
                     Google Book Search
                 </Link>

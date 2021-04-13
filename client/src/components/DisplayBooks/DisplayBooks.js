@@ -67,6 +67,7 @@ function Project (props) {
                             <button id={props.id} target="_blank" rel="noreferrer noopener"
                                 className="btn myButton buttonMargin" onClick={saveBook}>Save</button>
                         </div>
+                        <br />
                         <div className="row" style={{display: 'inline-block'}}>
                             <img className="padding" style={{float: 'left', height: '170px', width: '128px'}} src={props.image} alt="book"/>
                             <p className="card-text card-padding">{props.description}</p>

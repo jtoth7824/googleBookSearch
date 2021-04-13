@@ -22,10 +22,14 @@
   font-size: 20px;
 }
 .brand {
-  font-size: 20px;
+  font-size: 24px;
   margin-top: 10px;
   margin-bottom: 10px;
-  color: rgb(125, 129, 128);
+  color: black!important;
+}
+
+.navbar {
+  background-color: rgb(247, 244, 233, 0.391);
 }
 
 .embedSize {
@@ -37,8 +41,14 @@
   margin: 10px 0px;
 }
 
+.bg-light {
+  background-color: #fff !important;
+  color: #000;
+   border: none;
+}
+
 .aboutTextColor {
-  color: rgb(127, 125, 129);
+  color: black;
 }
 
 /* styling for bottom of container */

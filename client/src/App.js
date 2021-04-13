@@ -9,7 +9,6 @@ import Header from "./components/Header";
 function App() {
   return (
     <Router basename={`${process.env.PUBLIC_URL}/`}>
-      <div>
         <Header />
         <Switch>
           <Route exact path={["/", "/books"]}>
@@ -22,7 +21,7 @@ function App() {
             <NoMatch />
           </Route>
         </Switch>
-      </div>
+
     </Router>
   );
 }

@@ -47,6 +47,7 @@ var bookIndex;
                             <button id={props.id} target="_blank" rel="noreferrer noopener"
                                 className="btn myButton buttonMargin" onClick={deleteBook}>Delete</button>
                         </div>
+                        <br />
                         <div className="row" style={{display: 'inline-block'}}>
                             <img className="padding" style={{float: 'left'}} src={props.image} alt="savedbooks"/>
                             <p className="card-text card-padding">{props.description}</p>
