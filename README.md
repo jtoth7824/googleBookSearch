@@ -16,21 +16,21 @@ This application was built using React and utilizes component state and context.
 The following is a screenshot of the Google Book Search application home page.
 
 <p align="center">
-  <img src="./public/images/googlebooksearchHome.png" alt="google book search home page">
+  <img src="./client/src/images/googlebooksearchHome.png" alt="google book search home page">
 </p>
 
 #### Google Book Search Results
 The following is a screenshot of the Search Results.
 
 <p align="center">
-  <img src="./public/images/googlebooksearchResults.png" alt="google book search results">
+  <img src="./client/src/images/googlebooksearchResults.png" alt="google book search results">
 </p>
 
 #### Google Book Saved Books
 The following is a screenshot of the Saved Books.
 
 <p align="center">
-  <img src="./public/images/googlebooksaved.png" alt="google book saved books">
+  <img src="./client/src/images/googlebooksaved.png" alt="google book saved books">
 </p>
 
 ## Installation
