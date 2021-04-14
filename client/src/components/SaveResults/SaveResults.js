@@ -48,10 +48,10 @@ function SaveResults (props) {
                             <h5>Written by {props.author}</h5>
                         </div>
                         <div style={{ float: 'right'}}>
-                            <a  href={props.link} target="_blank" rel="noreferrer noopener"
-                                ><button target={props.link} rel="noreferrer noopener" className="btn myButton buttonMargin">View</button></a>
-                            <button id={props.id} target="_blank" rel="noreferrer noopener"
-                                className="btn myButton buttonMargin" onClick={deleteBook}>Delete</button>
+                            <a  className="btn myButton buttonMargin" href={props.link} target="_blank" rel="noreferrer noopener"
+                                ><button className="myButton" target={props.link} rel="noreferrer noopener" >View</button></a>
+                            <a className="btn myButton buttonMargin"><button id={props.id} target="_blank" rel="noreferrer noopener"
+                                className="myButton" onClick={deleteBook}>Delete</button></a>
                         </div>
                         <br />
                         <div className="row" style={{display: 'inline-block'}}>

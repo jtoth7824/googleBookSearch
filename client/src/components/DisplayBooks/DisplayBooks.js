@@ -70,10 +70,10 @@ function Project (props) {
                             <h5>Written by {props.author}</h5>
                         </div>
                         <div style={{ float: 'right'}}>
-                            <a  href={props.link} target="_blank" rel="noreferrer noopener"
-                                ><button className="btn myButton buttonMargin" target={props.link} rel="noreferrer noopener" >View</button></a>
-                            <button id={props.id} target="_blank" rel="noreferrer noopener"
-                                className="btn myButton buttonMargin" onClick={saveBook}>Save</button>
+                            <a  href={props.link} target="_blank" className="btn myButton buttonMargin" rel="noreferrer noopener"
+                                ><button className="myButton" target={props.link} rel="noreferrer noopener" >View</button></a>
+                            <a className="btn myButton buttonMargin"><button id={props.id} className=" myButton" target="_blank" rel="noreferrer noopener"
+                                 onClick={saveBook}>Save</button></a>
                         </div>
                         <br />
                         <div className="row" style={{display: 'inline-block'}}>

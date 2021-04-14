@@ -13,7 +13,7 @@ function SearchResults (props) {
                     <div className="container-fluid">
                         <div className="card ">
                             <div className="card-body interiorCardColor h-100">
-                                <h2 className="card-title "><strong>Search Results</strong></h2>
+                                <h2 className="card-title mytextColor"><strong>Search Results</strong></h2>
                                 <div className="row row-cols-1">
                                     <div>
                                         {books.map(result => (

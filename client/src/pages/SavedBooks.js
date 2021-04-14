@@ -42,7 +42,7 @@ function SavedBooks () {
                             <div className="container-fluid">
                                 <div className="card">
                                     <div className="card-body interiorCardColor">
-                                        <h2 className="card-title ">Saved Books</h2>
+                                        <h2 className="card-title mytextColor">Saved Books</h2>
                                         <div className="row row-cols-1">
                                             <div>
                                                 {savedbooks.map(result => (

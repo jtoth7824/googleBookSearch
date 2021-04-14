@@ -40,8 +40,13 @@
   margin: 10px 0px;
 }
 
+.mytextColor {
+  color: #C4D0CD !important;
+}
+
 .bg-light {
-  background-color: #faaf99 !important;
+  /* background-color: #faaf99 !important; */
+  background-color: #C4D0CD  !important;
   color: #000;
    border: none;
 }
@@ -57,11 +62,17 @@
 
 /* styling for buttons */
 .myButton {
-  color: #fff;
-  background-color: rgb(39, 129, 83);
-  border-color: rgb(39, 129, 83);
+  color: black;
+  background-color: #C4D0CD ;
+  border: none;
+/*   background-color: rgb(39, 129, 83);
+  border-color: rgb(39, 129, 83); */
   margin-right: 5px !important;
   font-size: 20px;
+}
+
+.myButton :hover {
+  color: white !important;
 }
 
 /* styling to keep column items separated */
@@ -108,7 +119,8 @@ body {
   padding: 5px 20px;
 }
 .interiorCardColor {
-  background-color: rgb(250, 240, 153)
+  /* background-color: rgb(250, 240, 153) */
+  background-color: #718879;
 }
 
 input[type="text"] {
@@ -129,7 +141,7 @@ input[type=text]:focus {
 
 /* styling for the footer */
 .myFooter {
-      padding: 5px 0;
+      /* padding: 5px 0; */
       margin: 0;
 }
 

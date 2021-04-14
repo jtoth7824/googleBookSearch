@@ -42,7 +42,7 @@ function Search() {
           <UserContext.Provider value={{books, searchTerm, handleBtnClick}}>
             <div className="container-fluid">
               <div className="card interiorCardColor">
-                <h4 className="formPadding"><strong>Book Search</strong></h4>
+                <h4 className="formPadding mytextColor"><strong>Book Search</strong></h4>
                 <form className="formPadding">
                   <input
                     value={searchTerm}
