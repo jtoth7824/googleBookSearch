@@ -1,8 +1,3 @@
-/* make header (h1-h6) tags not appear as they are just there to account for valid html structure when using semantic tags */
-/* .invisible {
-  display: none;
-} */
-
 /* styling for items in the navbar */
 .articleContainer {
   width: 100%;
@@ -29,7 +24,11 @@
 }
 
 .navbar {
-  background-color: rgb(247, 244, 233, 0.391);
+  background-color: #faaf99;
+  /* background-color: rgb(247, 244, 233, 0.391); */
+}
+.navbar :hover {
+  color: white;
 }
 
 .embedSize {
@@ -42,7 +41,7 @@
 }
 
 .bg-light {
-  background-color: #fff !important;
+  background-color: #faaf99 !important;
   color: #000;
    border: none;
 }
@@ -73,22 +72,19 @@
 .jumbotron {
   height: 300;
   clear: "both";
-  padding-top: 120;
+  padding-top: 32px;
+  padding-bottom: 64px;
   text-align: "center";
-  background-image: url("./images/pngfind.com-books-png-591502.png");
+  background-color: #EFF0EF;
+  /* background-image: url("./images/pngfind.com-books-png-591502.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
   height: 50%;
 }
 
 body {
   background-color: rgb(247, 244, 233, 0.391);
 }
-/* styling for background of pages */
-/* body {
-  background-image: url("./images/GrayXL.png");
-  background-attachment: fixed;
-} */
 
 /* styling for border bottom for Card object in grid */
 .myBottomBorder {
@@ -112,7 +108,7 @@ body {
   padding: 5px 20px;
 }
 .interiorCardColor {
-  background-color: rgb(250, 240, 151)
+  background-color: rgb(250, 240, 153)
 }
 
 input[type="text"] {
@@ -131,13 +127,6 @@ input[type=text]:focus {
   border-top-right-radius: 20px;
 }
 
-/* styling for personal picture on About Me page */
-/* .johnPic {
-  max-width: 100%;
-  height: auto;
-  max-height: 260px;
-} */
-
 /* styling for the footer */
 .myFooter {
       padding: 5px 0;
@@ -153,13 +142,3 @@ input[type=text]:focus {
   padding: 5px;
   margin: 5px;
 }
-/* 
-.interiorCardColor {
-  background-color: rgb(128, 90, 167)
-} */
-
-/* .cardBodyBorder {
-  border-top-width: 1px !important;
-  border-top-style: solid !important;
-  border-top-color: gray;
-} */

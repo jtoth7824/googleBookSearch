@@ -3,30 +3,36 @@ import SavedBooksContext from "../../utils/savedBooksContext";
 import API from "../../utils/API";
 
 function SaveResults (props) {
-var bookIndex;
-    const {books1} = useContext(SavedBooksContext);
-    console.log(props);
-    var help = props.change;
-    const updateTrigger = useCallback((bookIndex) => {
-        console.log("bookIndex in update = " + bookIndex);
-        help(bookIndex);
-      }, [help])
+    // set up context for saved books
+    var bookIndex;
+    const {savedbooks} = useContext(SavedBooksContext);
 
+    // save the set Trigger method that was passed in via props
+    var setTriggerMethod = props.change;
+
+    // bookIndex contains which delete button was pressed
+    const updateTrigger = useCallback((bookIndex) => {
+        // set trigger state to bookIndex to cause re-render based on state changing
+        setTriggerMethod(bookIndex);
+      }, [setTriggerMethod])
+
+    // function to delete a book based upon delete button user clicked
     function deleteBook(e) {
 
-      console.log(e.target.id);
       var index;
-      for (var i=0; i<books1.length; i++) {
-        if ( books1[i]._id === e.target.id ) {
+      // loop over saved books to find the object ID that matches the save button
+      for (var i=0; i<savedbooks.length; i++) {
+        if ( savedbooks[i]._id === e.target.id ) {
           index = i;
           break;
         }
       }
-      console.log(books1[index]._id);
-      bookIndex = books1[index]._id;
-      API.deleteBook(books1[index]._id)
+      // save off the book object ID
+      bookIndex = savedbooks[index]._id;
+      // call route to delete the book
+      API.deleteBook(savedbooks[index]._id)
          .then(res => {
-             console.log(bookIndex);
+             // call update trigger to change the state value to cause re-render of component
              updateTrigger(bookIndex);
          })
         .catch(err => console.log(err))
